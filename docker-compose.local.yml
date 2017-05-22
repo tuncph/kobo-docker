@@ -110,6 +110,8 @@ kpi:
     #- ~/devel/liclipse/plugins/org.python.pydev_5.4.0.201611281405/pysrc:/srv/pydev_orig:ro
     # Dev: Share your `.transifexrc` into the container.
     # - ./.transifexrc:/root/.transifexrc
+  environment:
+    - DISABLE_DJANGO_AXES=True
   restart: on-failure
 
 nginx:
