@@ -46,11 +46,11 @@ kobocat:
   hostname: kobocat
   env_file:
     - ./envfile.local.txt
-    - ./envfiles/aws.txt
-    - ./envfiles/external_services.txt
-    - ./envfiles/kobocat.txt
-    - ./envfiles/nginx.txt
-    - ./envfiles/smtp.txt
+    - ./envfiles/local/aws.txt
+    - ./envfiles/local/external_services.txt
+    - ./envfiles/local/kobocat.txt
+    - ./envfiles/local/nginx.txt
+    - ./envfiles/local/smtp.txt
   links:
     - rabbit
     - mongo
@@ -84,11 +84,11 @@ kpi:
   hostname: kpi
   env_file:
     - ./envfile.local.txt
-    - ./envfiles/aws.txt
-    - ./envfiles/external_services.txt
-    - ./envfiles/kpi.txt
-    - ./envfiles/nginx.txt
-    - ./envfiles/smtp.txt
+    - ./envfiles/local/aws.txt
+    - ./envfiles/local/external_services.txt
+    - ./envfiles/local/kpi.txt
+    - ./envfiles/local/nginx.txt
+    - ./envfiles/local/smtp.txt
   links:
     - postgres
     - rabbit
@@ -122,9 +122,9 @@ nginx:
   hostname: nginx
   env_file:
     - ./envfile.local.txt
-    - ./envfiles/nginx.txt
-    - ./envfiles/kobocat.txt
-    - ./envfiles/kpi.txt
+    - ./envfiles/local/nginx.txt
+    - ./envfiles/local/kobocat.txt
+    - ./envfiles/local/kpi.txt
   environment:
     - NGINX_CONFIG_FILE_NAME=nginx_site_http.conf
   ports:
@@ -152,7 +152,7 @@ enketo_express:
   # build: ../enketo-express/
   env_file:
     - ./envfile.local.txt
-    - ./envfiles/external_services.txt
+    - ./envfiles/local/external_services.txt
   links:
     - redis_main
     - redis_cache
